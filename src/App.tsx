@@ -4,32 +4,33 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/login/Login';
+import Cadastro from './pages/cadastro/Cadastro';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <>
-
-    {/* Satélite - ele habilita o sistema de localização/roteamento */}
+    <AuthProvider>
+      {/* Satélite - ele habilita o sistema de localização/roteamento */}
       <BrowserRouter>
-        <Navbar/>
+        <Navbar />
 
-        <div>
-
-        </div>
+        <div className='min-h-[80vh]'>
           <Routes>
 
             {/* Rota para chegar no objetivo */}
-            <Route path = '/' element = { <Home/>} />
-            <Route path = '/' element = { <Login/>} />
-            <Route path = '/' element = { <Home/>} />
-              
+            <Route path='/home' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/cadastro' element={<Cadastro />} />
+            <Route path='/' element={<Home />} />
+
           </Routes>
-        {/* GPS/Aplicativo -> ele pega o caminho da URL (login/cadastro) */}
+          {/* GPS/Aplicativo -> ele pega o caminho da URL (login/cadastro) */}
+        </div>
 
-        <Footer/>
-
+        <Footer />
       </BrowserRouter>
-    </>
-)
+    </AuthProvider>
+  )
 }
 export default App
+
