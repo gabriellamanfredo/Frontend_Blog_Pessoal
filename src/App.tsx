@@ -9,6 +9,9 @@ import { AuthProvider } from './context/AuthContext';
 import ListaTemas from './components/temas/listaTemas/ListaTemas';
 import FormularioTema from './components/temas/formularioTemas/FormularioTemas';
 import DeletarTema from './components/temas/deletarTemas/DeletarTemas';
+import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens';
+import FormularioPostagem from './components/postagens/formularioPostagens/FormularioPostagem';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagens';
 
 function App() {
   return (
@@ -29,7 +32,10 @@ function App() {
             <Route path='/cadastrarTema' element={<FormularioTema />} />
             <Route path='/editarTema/:id' element={<FormularioTema />} />
             <Route path='/deletarTema/:id' element={<DeletarTema />} />
-
+            <Route path="/postagens" element={<ListaPostagens />} />
+            <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
+            <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
+            <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
           </Routes>
           {/* GPS/Aplicativo -> ele pega o caminho da URL (login/cadastro) */}
         </div>
