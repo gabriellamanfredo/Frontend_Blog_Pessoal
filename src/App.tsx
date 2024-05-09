@@ -12,10 +12,15 @@ import DeletarTema from './components/temas/deletarTemas/DeletarTemas';
 import ListaPostagens from './components/postagens/listaPostagens/ListaPostagens';
 import FormularioPostagem from './components/postagens/formularioPostagens/FormularioPostagem';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagens';
+import Perfil from './pages/perfil/Perfil';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer />
       {/* Satélite - ele habilita o sistema de localização/roteamento */}
       <BrowserRouter>
         <Navbar />
@@ -29,13 +34,14 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/cadastro' element={<Cadastro />} />
             <Route path='/temas' element={<ListaTemas />} />
-            <Route path='/cadastrarTema' element={<FormularioTema />} />
+            <Route path='/cadastroTema' element={<FormularioTema />} />
             <Route path='/editarTema/:id' element={<FormularioTema />} />
             <Route path='/deletarTema/:id' element={<DeletarTema />} />
             <Route path="/postagens" element={<ListaPostagens />} />
             <Route path="/cadastroPostagem" element={<FormularioPostagem />} />
             <Route path="/editarPostagem/:id" element={<FormularioPostagem />} />
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+            <Route path="/perfil" element={<Perfil />} />
           </Routes>
           {/* GPS/Aplicativo -> ele pega o caminho da URL (login/cadastro) */}
         </div>
