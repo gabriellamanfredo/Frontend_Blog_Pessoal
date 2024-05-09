@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Conexão Back vs Front
 const api = axios.create({
-  baseURL: "https://blogpessoal-aojm.onrender.com/"  //usuarios/logar
+  baseURL: import.meta.env.VITE_API_URL   //usuarios/logar
 });
 
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
